@@ -1,0 +1,22 @@
+{
+  "name": "<%= _.slugify(appname) %>",
+  "version": "0.0.0",
+  "dependencies": {},
+  "engines": {
+    "node": ">=0.8.0"
+  },
+  "dependencies": {
+    "docpad": "~6.56.0",
+    "docpad-plugin-eco": "~2.0.2"<% if (options.grunt) { %>,
+    "docpad-plugin-grunt": "2.0.5"<% } %>
+  },
+  "devDependencies": {
+    "docpad-plugin-livereload": "~2.5.3"<% if (options.bower) { %>,
+    "bower": "~1.2.7"<% } %>
+  },
+  "main": "node_modules/docpad/bin/docpad-server",
+  "scripts": {
+    "start": "node ./node_modules/docpad/bin/docpad run"<% if (options.bower) { %>,
+    "postinstall": "node_modules/bower/bin/bower install"<% } %>
+  }
+}

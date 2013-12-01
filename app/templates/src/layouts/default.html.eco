@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Standard Meta -->
+  <meta charset="utf-8" />
+
+  <!-- Site Properities -->
+  <title><%= @site.title %></title>
+  <meta name="description" content="<%= @site.description %>" />
+  <meta name="keywords" content="<%= @site.keywords %>" />
+
+  <!-- DocPad Meta -->
+  <%- @getBlock('meta').toHTML() %>
+
+  <!-- DocPad Styles + Our Own -->
+  <%- @getBlock('styles').add(@site.styles).toHTML() %>
+</head>
+<body>
+  <header>
+    <h1><%= @document.title || @site.title %></h1>
+  </header>
+  <article>
+    <%- @content %>
+  </article>
+
+  <!-- DocPad Scripts + Our Own -->
+  <%- @getBlock('scripts').add(@site.scripts).toHTML() %>
+</body>
+</html>
