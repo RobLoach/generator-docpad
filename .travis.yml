@@ -5,4 +5,5 @@ node_js:
 before_install:
   - currentfolder=${PWD##*/}
   - if [ "$currentfolder" != 'generator-docpad' ]; then cd .. && eval "mv $currentfolder generator-docpad" && cd generator-docpad; fi
-
+notifications:
+  email: false
