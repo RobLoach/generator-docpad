@@ -31,6 +31,11 @@ DocPadGenerator.prototype.askFor = function askFor() {
   // Prompt the user for some input.
   var prompts = [
     {
+      name: 'appname',
+      message: 'Project name',
+      default: (this.appname) ? this.appname : 'DocPad Example'
+    },
+    {
       type: 'list',
       name: 'docpadFile',
       message: 'DocPad configuration file',
@@ -86,12 +91,16 @@ DocPadGenerator.prototype.askFor = function askFor() {
     // Construct the user options.
     function hasFeature(feat) { return answers.features.indexOf(feat) !== -1; }
     this.options = {
+      appname: answers.appname,
       docpadFile: answers.docpadFile,
       license: answers.license,
       bower: hasFeature('bower'),
       marked: hasFeature('marked'),
       grunt: hasFeature('grunt')
     };
+
+    // Override any of the internal variables.
+    this.appname = this.options.appname;
 
     cb();
   }.bind(this));
