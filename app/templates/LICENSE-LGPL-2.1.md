@@ -4,7 +4,7 @@ LICENSE
 <%= appname %> is released under LGPL-2.1 License:
 
 > <%= appname %>
-> Copyright (C) <%= currentYear %> <%= appname %>
+> Copyright (C) <%= new Date().getFullYear() %> <%= appname %>
 >
 > This library is free software; you can redistribute it and/or modify it under
 > the terms of the GNU Lesser General Public License as published by the Free

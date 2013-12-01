@@ -6,7 +6,7 @@
 var docpadConfig = {
   templateData: {
     site: {
-      title: "<%= _.slugify(appname) %>",
+      title: "<%= appname %>",
       url: "http://example.com",
       description: "When your website appears in search results in say Google, the text here will be shown underneath your website's title.",
       keywords: "place, your, website, keywoards, here",

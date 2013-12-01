@@ -20,8 +20,8 @@ describe('docpad generator', function () {
     });
 
     it('creates expected files', function (done) {
+        // Expected list of files.
         var expected = [
-            // add files you expect to exist here.
             'README.md',
             '.editorconfig',
             'Gruntfile.coffee',
@@ -31,11 +31,14 @@ describe('docpad generator', function () {
             'LICENSE.md'
         ];
 
+        // Mock the answer prompts.
         helpers.mockPrompt(this.app, {
-            'grunt': true,
-            'bower': true,
             'docpadFile': 'docpad.cson',
-            'license': 'Apache-2.0'
+            'license': 'Apache-2.0',
+            features: [
+              'grunt',
+              'bower'
+            ]
         });
         this.app.options['skip-install'] = true;
         this.app.run({}, function () {

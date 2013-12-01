@@ -3,7 +3,7 @@ LICENSE
 
 <%= appname %> is released under the BSD 2-Clause License:
 
-> Copyright (c) <%= currentYear %>, <%= _.slugify(appname) %>
+> Copyright (c) <%= new Date().getFullYear() %>, <%= _.slugify(appname) %>
 > All rights reserved.
 >
 > Redistribution and use in source and binary forms, with or without

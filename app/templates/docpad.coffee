@@ -5,7 +5,7 @@ docpadConfig = {
   templateData:
     site:
       # The default title of our website.
-      title: "<%= _.slugify(appname) %>"
+      title: "<%= appname %>"
 
       # The production url of our website.
       url: "http://example.com"

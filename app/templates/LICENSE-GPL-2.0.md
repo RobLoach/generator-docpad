@@ -4,7 +4,7 @@ LICENSE
 <%= appname %> is released under the GPL-2.0 License:
 
 > <%= appname %>
-> Copyright (C) <%= currentYear %>, <%= _.slugify(appname) %>
+> Copyright (C) <%= new Date().getFullYear() %>, <%= _.slugify(appname) %>
 >
 > This program is free software; you can redistribute it and/or modify it under
 > the terms of the GNU General Public License as published by the Free Software

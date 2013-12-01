@@ -28,10 +28,10 @@ DocPadGenerator.prototype.askFor = function askFor() {
       name: 'docpadFile',
       message: 'DocPad configuration file',
       choices: [
-        'docpad.js',
-        'docpad.json',
         'docpad.coffee',
-        'docpad.cson'
+        'docpad.cson',
+        'docpad.js',
+        'docpad.json'
       ],
       default: 'docpad.coffee'
     },
@@ -40,36 +40,45 @@ DocPadGenerator.prototype.askFor = function askFor() {
       name: 'license',
       message: 'License',
       choices: [
+        'MIT',
         'Apache-2.0',
         'BSD-2-Clause',
         'BSD-3-Clause',
         'GPL-2.0',
         'GPL-3.0',
         'LGPL-2.1',
-        'LGPL-3.0',
-        'MIT'
+        'LGPL-3.0'
       ],
       default: 'MIT'
     },
     {
-      type: 'confirm',
-      name: 'bower',
-      message: 'Use Bower package manager?',
-      default: false
-    },
-    {
-      type: 'confirm',
-      name: 'grunt',
-      message: 'Use Grunt task runner?',
-      default: false
+      type: 'checkbox',
+      name: 'features',
+      message: 'Features',
+      choices: [
+        {
+          name: 'Bower',
+          value: 'bower',
+          checked: false
+        },
+        {
+          name: 'Grunt',
+          value: 'grunt',
+          checked: false
+        }
+      ]
     }
   ];
 
-  this.prompt(prompts, function (props) {
-    this.docpadFile = props.docpadFile;
-    this.bower = props.bower;
-    this.grunt = props.grunt;
-    this.license = props.license;
+  this.prompt(prompts, function (answers) {
+    this.docpadFile = answers.docpadFile;
+    this.license = answers.license;
+    var features = answers.features;
+
+    function hasFeature(feat) { return features.indexOf(feat) !== -1; }
+
+    this.bower = hasFeature('bower');
+    this.grunt = hasFeature('grunt');
 
     cb();
   }.bind(this));
@@ -81,8 +90,8 @@ DocPadGenerator.prototype.app = function app() {
   this.mkdir('src/files');
   this.mkdir('src/layouts');
 
-  this.copy('_package.json', 'package.json');
-  this.copy('README.md', 'README.md');
+  this.template('_package.json', 'package.json');
+  this.template('README.md', 'README.md');
 };
 
 DocPadGenerator.prototype.projectfiles = function projectfiles() {
@@ -93,17 +102,20 @@ DocPadGenerator.prototype.projectfiles = function projectfiles() {
   this.copy('editorconfig', '.editorconfig');
 
   // Grunt.
-  if (this.grunt) {
-    this.copy('Gruntfile.coffee', 'Gruntfile.coffee');
-  }
 
   // Bower.
   if (this.bower) {
-    this.copy('_bower.json', 'bower.json');
+    this.template('bower.json', 'bower.json');
   }
 
   // License.
-  this.copy('LICENSE-' + this.license + '.md', 'LICENSE.md');
+  this.template('LICENSE-' + this.license + '.md', 'LICENSE.md');
+};
+
+DocPadGenerator.prototype.grunt = function grunt() {
+  if (this.grunt) {
+    this.template('Gruntfile.coffee', 'Gruntfile.coffee');
+  }
 };
 
 DocPadGenerator.prototype.srcFiles = function srcFiles() {

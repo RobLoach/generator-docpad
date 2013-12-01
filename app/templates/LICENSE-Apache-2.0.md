@@ -3,7 +3,7 @@ LICENSE
 
 <%= appname %> is released under the Apache License, Version 2.0:
 
-> Copyright <%= currentYear %> <%= _.slugify(appname) %>
+> Copyright <%= new Date().getFullYear() %> <%= _.slugify(appname) %>
 >
 > Licensed under the Apache License, Version 2.0 (the "License"); you may not
 > use this file except in compliance with the License. You may obtain a copy of
