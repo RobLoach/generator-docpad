@@ -35,8 +35,9 @@ $ npm start
 ## Features
 
 * Base DocPad application structure
-* Grunt
-* Bower
+* [Bower](http://github.com/robloach/docpad-plugin-bower)
+* [Grunt](http://github.com/robloach/docpad-plugin-grunt)
+* [Marked](http://docpad.org/plugin/marked)
 
 
 ## License
