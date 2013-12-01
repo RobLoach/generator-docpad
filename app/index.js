@@ -64,13 +64,18 @@ DocPadGenerator.prototype.askFor = function askFor() {
       message: 'Features',
       choices: [
         {
-          name: 'Bower',
+          name: 'Bower: Package Manager',
           value: 'bower',
           checked: false
         },
         {
-          name: 'Grunt',
+          name: 'Grunt: Task Runner',
           value: 'grunt',
+          checked: false
+        },
+        {
+          name: 'Marked: Supports Markdown to HTML',
+          value: 'marked',
           checked: false
         }
       ]
@@ -84,6 +89,7 @@ DocPadGenerator.prototype.askFor = function askFor() {
       docpadFile: answers.docpadFile,
       license: answers.license,
       bower: hasFeature('bower'),
+      marked: hasFeature('marked'),
       grunt: hasFeature('grunt')
     };
 
@@ -134,13 +140,25 @@ DocPadGenerator.prototype.bower = function bower() {
   }
 };
 
+DocPadGenerator.prototype.marked = function marked() {
+  if (this.options.marked) {
+    this.template('docpad/documents/marked.html.md', 'src/documents/marked.html.md');
+  }
+};
+
 DocPadGenerator.prototype.docpadFiles = function docpadFiles() {
   // All the DocPad source files.
   var files = [
-    "documents/index.html",
+    "documents/index.html"
+  ];
+  for (var i in files) {
+    this.template('docpad/' + files[i], 'src/' + files[i]);
+  }
+
+  var files = [
+    "layouts/default.html.eco",
     "files/main.css",
-    "files/main.js",
-    "layouts/default.html.eco"
+    "files/main.js"
   ];
   for (var i in files) {
     this.copy('docpad/' + files[i], 'src/' + files[i]);

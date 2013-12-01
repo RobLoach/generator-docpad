@@ -29,7 +29,8 @@ describe('docpad generator', function () {
             'bower.json',
             'docpad.cson',
             'src/documents/index.html',
-            'LICENSE.md'
+            'LICENSE.md',
+            'src/documents/marked.html.md'
         ];
 
         // Mock the answer prompts.
@@ -38,6 +39,7 @@ describe('docpad generator', function () {
             'license': 'Apache-2.0',
             features: [
               'grunt',
+              'marked',
               'bower'
             ]
         });

@@ -8,11 +8,13 @@
   "dependencies": {
     "docpad": "~6.56.0",
     "docpad-plugin-eco": "~2.0.2"<% if (options.grunt) { %>,
-    "docpad-plugin-grunt": "2.0.5"<% } %>
+    "docpad-plugin-grunt": "~2.0.5"<% } %><% if (options.marked) { %>,
+    "docpad-plugin-marked": "~2.1.2"<% } %>
   },
   "devDependencies": {
     "docpad-plugin-livereload": "~2.5.3"<% if (options.bower) { %>,
-    "bower": "~1.2.7"<% } %>
+    "bower": "~1.2.7"<% } %><% if (options.grunt) { %>,
+    "grunt": "~0.4.2"<% } %>
   },
   "main": "node_modules/docpad/bin/docpad-server",
   "scripts": {
