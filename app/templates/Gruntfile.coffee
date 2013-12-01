@@ -10,13 +10,15 @@ module.exports = (grunt) ->
     pkg: grunt.file.readJSON("package.json")
 
     # Use Uglify to minify files.
-    uglify:
-      production:
-        files:
-          "out/main.js": "out/main.js"
+    #uglify:
+    #  production:
+    #    files:
+    #      "out/main.js": "out/main.js"
 
   # Build the available Grunt tasks.
-  grunt.loadNpmTasks "grunt-contrib-uglify"
+  #grunt.loadNpmTasks "grunt-contrib-uglify"
 
   # Register our Grunt tasks.
-  grunt.registerTask "default", ["uglify"]
+  grunt.registerTask "default", [
+    #"uglify"
+  ]

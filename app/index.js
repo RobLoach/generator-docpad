@@ -1,9 +1,15 @@
 'use strict';
+
+/**
+ * Dependencies
+ */
 var util = require('util');
 var path = require('path');
 var yeoman = require('yeoman-generator');
 
-
+/**
+ * DocPad Generator
+ */
 var DocPadGenerator = module.exports = function DocPadGenerator(args, options, config) {
   yeoman.generators.Base.apply(this, arguments);
 
@@ -124,7 +130,7 @@ DocPadGenerator.prototype.grunt = function grunt() {
 DocPadGenerator.prototype.bower = function bower() {
   if (this.options.bower) {
     this.template('_bower.json', 'bower.json');
-    this.template('.bowerrc', '.bowerrc');
+    this.template('bowerrc', '.bowerrc');
   }
 };
 

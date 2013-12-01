@@ -26,6 +26,11 @@ $ cd myproject
 $ yo docpad
 ```
 
+4. Use the newly built DocPad application:
+``` bash
+$ npm start
+```
+
 
 ## Features
 
