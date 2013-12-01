@@ -123,7 +123,7 @@ DocPadGenerator.prototype.grunt = function grunt() {
 
 DocPadGenerator.prototype.bower = function bower() {
   if (this.options.bower) {
-    this.template('bower.json', 'bower.json');
+    this.template('_bower.json', 'bower.json');
     this.template('.bowerrc', '.bowerrc');
   }
 };
