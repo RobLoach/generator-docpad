@@ -24,6 +24,7 @@ describe('docpad generator', function () {
         var expected = [
             'README.md',
             '.editorconfig',
+            '.gitignore',
             'Gruntfile.coffee',
             'bower.json',
             'docpad.cson',

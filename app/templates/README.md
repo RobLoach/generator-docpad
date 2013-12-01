@@ -1,6 +1,6 @@
-# <%= _.slugify(appname) %>
+# <%= appname %>
 
-Site for <%= _.slugify(appname) %>, built with [DocPad](http://docpad.org).
+Site for <%= appname %>, built with [DocPad](http://docpad.org).
 
 
 ## Dependencies
@@ -18,4 +18,5 @@ $ npm start
 
 ## License
 
-Copyright &copy; 2013+ All rights reserved.
+Licensed under the [<%= options.license %> License](LICENSE.md).
+<br/>Copyright &copy; <%= new Date().getFullYear() %> <%= appname %>

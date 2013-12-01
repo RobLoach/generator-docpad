@@ -22,6 +22,7 @@ DocPadGenerator.prototype.askFor = function askFor() {
   // have Yeoman greet the user.
   console.log(this.yeoman);
 
+  // Prompt the user for some input.
   var prompts = [
     {
       type: 'list',
@@ -71,50 +72,59 @@ DocPadGenerator.prototype.askFor = function askFor() {
   ];
 
   this.prompt(prompts, function (answers) {
-    this.docpadFile = answers.docpadFile;
-    this.license = answers.license;
-    var features = answers.features;
-
-    function hasFeature(feat) { return features.indexOf(feat) !== -1; }
-
-    this.bower = hasFeature('bower');
-    this.grunt = hasFeature('grunt');
+    // Construct the user options.
+    function hasFeature(feat) { return answers.features.indexOf(feat) !== -1; }
+    this.options = {
+      docpadFile: answers.docpadFile,
+      license: answers.license,
+      bower: hasFeature('bower'),
+      grunt: hasFeature('grunt')
+    };
 
     cb();
   }.bind(this));
 };
 
 DocPadGenerator.prototype.app = function app() {
+  // Directory structure.
   this.mkdir('src');
   this.mkdir('src/documents');
   this.mkdir('src/files');
   this.mkdir('src/layouts');
 
+  // package.json
   this.template('_package.json', 'package.json');
-  this.template('README.md', 'README.md');
+
+  // DocPad configuration file.
+  this.copy(this.options.docpadFile, this.options.docpadFile);
 };
 
 DocPadGenerator.prototype.projectfiles = function projectfiles() {
-  // DocPad configuration file.
-  this.copy(this.docpadFile, this.docpadFile);
-
   // .editorconfig
   this.copy('editorconfig', '.editorconfig');
 
-  // Grunt.
+  // .gitignore
+  this.copy('gitignore', '.gitignore');
+};
 
-  // Bower.
-  if (this.bower) {
-    this.template('bower.json', 'bower.json');
-  }
+DocPadGenerator.prototype.documentation = function documentation() {
+  // Readme
+  this.template('README.md', 'README.md');
 
   // License.
-  this.template('LICENSE-' + this.license + '.md', 'LICENSE.md');
+  this.template('LICENSE-' + this.options.license + '.md', 'LICENSE.md');
 };
 
 DocPadGenerator.prototype.grunt = function grunt() {
-  if (this.grunt) {
+  if (this.options.grunt) {
     this.template('Gruntfile.coffee', 'Gruntfile.coffee');
+  }
+};
+
+DocPadGenerator.prototype.bower = function bower() {
+  if (this.options.bower) {
+    this.template('bower.json', 'bower.json');
+    this.template('.bowerrc', '.bowerrc');
   }
 };
 
