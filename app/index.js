@@ -128,15 +128,15 @@ DocPadGenerator.prototype.bower = function bower() {
   }
 };
 
-DocPadGenerator.prototype.srcFiles = function srcFiles() {
+DocPadGenerator.prototype.docpadFiles = function docpadFiles() {
   // All the DocPad source files.
   var files = [
-    "src/documents/index.html",
-    "src/files/main.css",
-    "src/files/main.js",
-    "src/layouts/default.html.eco"
+    "documents/index.html",
+    "files/main.css",
+    "files/main.js",
+    "layouts/default.html.eco"
   ];
   for (var i in files) {
-    this.copy(files[i], files[i]);
+    this.copy('docpad/' + files[i], 'src/' + files[i]);
   }
 };
