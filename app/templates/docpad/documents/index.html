@@ -1,12 +1,13 @@
 ---
 layout: "default"
-title: "<%= _.slugify(appname) %>"
+title: "<%= appname %>"
 ---
 
 <p>Welcome to <%= appname %>.</p>
 
-<h2>Examples</h2>
+<h2>Features</h2>
 <ul>
-  <% if (options.marked) { %><li><a href="marked.html">Marked</a></li><% } %>
   <% if (options.eco) { %><li><a href="eco.html">Eco</a></li><% } %>
+  <% if (options.jade) { %><li><a href="jade.html">Jade</a></li><% } %>
+  <% if (options.marked) { %><li><a href="marked.html">Marked</a></li><% } %>
 </ul>

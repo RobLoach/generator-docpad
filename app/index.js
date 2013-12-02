@@ -74,6 +74,11 @@ DocPadGenerator.prototype.askFor = function askFor() {
           checked: true
         },
         {
+          name: 'Jade: Supports Jade to anything',
+          value: 'eco',
+          checked: false
+        },
+        {
           name: 'Marked: Supports Markdown to HTML',
           value: 'marked',
           checked: false
@@ -116,6 +121,7 @@ DocPadGenerator.prototype.askFor = function askFor() {
       marked: hasRenderer('marked'),
       eco: hasRenderer('eco'),
       grunt: hasHelper('grunt'),
+      jade: hasRenderer('jade'),
       livereload: hasHelper('livereload')
     };
 
@@ -123,7 +129,7 @@ DocPadGenerator.prototype.askFor = function askFor() {
     this.appname = this.options.appname;
 
     // Ensure the base requirements are met.
-    if (!this.options.eco) {
+    if (!this.options.eco && !this.options.jade) {
       this.options.eco = true;
     }
 
@@ -184,6 +190,13 @@ DocPadGenerator.prototype.eco = function eco() {
   if (this.options.eco) {
     this.copy('docpad/layouts/default.html.eco', 'src/layouts/default.html.eco');
     this.copy('docpad/documents/eco.html.eco', 'src/documents/eco.html.eco');
+  }
+};
+
+DocPadGenerator.prototype.jade = function jade() {
+  if (this.options.eco) {
+    this.copy('docpad/layouts/default.html.jade', 'src/layouts/default.html.jade');
+    this.copy('docpad/documents/jade.html.jade', 'src/documents/jade.html.jade');
   }
 };
 

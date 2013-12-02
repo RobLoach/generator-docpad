@@ -34,11 +34,12 @@ $ npm start
 
 ## Features
 
-* Set up the DocPad application structure
-* Select [Renderers](http://docpad.org/docs/plugins#renderers)
+* Builds the DocPad application structure
+* Choose [Renderers](http://docpad.org/docs/plugins#renderers)
   * [Eco](http://docpad.org/plugin/eco)
+  * [Jade](http://docpad.org/plugin/jade)
   * [Marked](http://docpad.org/plugin/marked)
-* Select [Helpers](http://docpad.org/docs/plugins#helpers)
+* Choose [Helpers](http://docpad.org/docs/plugins#helpers)
   * [Bower](http://github.com/robloach/docpad-plugin-bower)
   * [Grunt](http://github.com/robloach/docpad-plugin-grunt)
   * [Live Reload](http://docpad.org/plugin/livereload)

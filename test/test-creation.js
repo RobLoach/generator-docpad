@@ -42,7 +42,8 @@ describe('docpad generator', function () {
             'license': 'Apache-2.0',
             renderers: [
               'marked',
-              'eco'
+              'eco',
+              'jade'
             ],
             helpers: [
               'grunt',
