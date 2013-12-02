@@ -13,7 +13,8 @@
     "docpad-plugin-jade": "~2.6.1"<% } %><% if (options.ghpages) { %>,
     "docpad-plugin-ghpages": "~2.4.0"<% } %>
   },
-  "devDependencies": {<% if (options.livereload) { %>
+  "devDependencies": {
+    "docpad": "~6.56.0"<% if (options.livereload) { %>,
     "docpad-plugin-livereload": "~2.5.3"<% } %><% if (options.bower) { %>,
     "bower": "~1.2.7"<% } %><% if (options.grunt) { %>,
     "grunt": "~0.4.2"<% } %>
