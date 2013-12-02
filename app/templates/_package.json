@@ -1,5 +1,6 @@
 {
   "name": "<%= _.slugify(appname) %>",
+  "description": "<%= appname %>",
   "version": "0.0.0",
   "engines": {
     "node": ">=0.8.0"
@@ -9,7 +10,8 @@
     "docpad-plugin-eco": "~2.0.2"<% } %><% if (options.grunt) { %>,
     "docpad-plugin-grunt": "~2.0.5"<% } %><% if (options.marked) { %>,
     "docpad-plugin-marked": "~2.1.2"<% } %><% if (options.jade) { %>,
-    "docpad-plugin-jade": "~2.6.1"<% } %>
+    "docpad-plugin-jade": "~2.6.1"<% } %><% if (options.ghpages) { %>,
+    "docpad-plugin-ghpages": "~2.4.0"<% } %>
   },
   "devDependencies": {<% if (options.livereload) { %>
     "docpad-plugin-livereload": "~2.5.3"<% } %><% if (options.bower) { %>,

@@ -43,6 +43,8 @@ $ npm start
   * [Bower](http://github.com/robloach/docpad-plugin-bower)
   * [Grunt](http://github.com/robloach/docpad-plugin-grunt)
   * [Live Reload](http://docpad.org/plugin/livereload)
+* Choose [Deployers](http://docpad.org/docs/plugins#deployers)
+  * [GitHub Pages](http://docpad.org/plugin/ghpages)
 
 
 ## License

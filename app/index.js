@@ -106,6 +106,18 @@ DocPadGenerator.prototype.askFor = function askFor() {
           checked: true
         }
       ]
+    },
+    {
+      type: 'checkbox',
+      name: 'deployers',
+      message: 'Deployers',
+      choices: [
+        {
+          name: 'ghpages: Deploy to GitHub Pages',
+          value: 'ghpages',
+          checked: false
+        }
+      ]
     }
   ];
 
@@ -113,6 +125,7 @@ DocPadGenerator.prototype.askFor = function askFor() {
     // Construct the user options.
     function hasRenderer(feat) { return answers.renderers.indexOf(feat) !== -1; }
     function hasHelper(feat) { return answers.helpers.indexOf(feat) !== -1; }
+    function hasDeployer(feat) { return answers.deployers.indexOf(feat) !== -1; }
     this.options = {
       appname: answers.appname,
       docpadFile: answers.docpadFile,
@@ -122,7 +135,8 @@ DocPadGenerator.prototype.askFor = function askFor() {
       eco: hasRenderer('eco'),
       grunt: hasHelper('grunt'),
       jade: hasRenderer('jade'),
-      livereload: hasHelper('livereload')
+      livereload: hasHelper('livereload'),
+      ghpages: hasDeployer('ghpages')
     };
 
     // Override any of the internal variables.
