@@ -208,7 +208,7 @@ DocPadGenerator.prototype.eco = function eco() {
 };
 
 DocPadGenerator.prototype.jade = function jade() {
-  if (this.options.eco) {
+  if (this.options.jade) {
     this.copy('docpad/layouts/default.html.jade', 'src/layouts/default.html.jade');
     this.copy('docpad/documents/jade.html.jade', 'src/documents/jade.html.jade');
   }
