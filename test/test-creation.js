@@ -30,7 +30,9 @@ describe('docpad generator', function () {
             'docpad.cson',
             'src/documents/index.html',
             'LICENSE.md',
-            'src/documents/marked.html.md'
+            'src/documents/marked.html.md',
+            'src/documents/eco.html.eco',
+            'src/layouts/default.html.eco'
         ];
 
         // Mock the answer prompts.
@@ -38,10 +40,14 @@ describe('docpad generator', function () {
             'appname': 'DocPad test',
             'docpadFile': 'docpad.cson',
             'license': 'Apache-2.0',
-            features: [
-              'grunt',
+            renderers: [
               'marked',
-              'bower'
+              'eco'
+            ],
+            helpers: [
+              'grunt',
+              'bower',
+              'livereload'
             ]
         });
         this.app.options['skip-install'] = true;

@@ -65,8 +65,25 @@ DocPadGenerator.prototype.askFor = function askFor() {
     },
     {
       type: 'checkbox',
-      name: 'features',
-      message: 'Features',
+      name: 'renderers',
+      message: 'Renderers',
+      choices: [
+        {
+          name: 'Eco: Supports Eco to anything',
+          value: 'eco',
+          checked: true
+        },
+        {
+          name: 'Marked: Supports Markdown to HTML',
+          value: 'marked',
+          checked: false
+        }
+      ]
+    },
+    {
+      type: 'checkbox',
+      name: 'helpers',
+      message: 'Helpers',
       choices: [
         {
           name: 'Bower: Package Manager',
@@ -79,9 +96,9 @@ DocPadGenerator.prototype.askFor = function askFor() {
           checked: false
         },
         {
-          name: 'Marked: Supports Markdown to HTML',
-          value: 'marked',
-          checked: false
+          name: 'Live Reload: Automatically reloads the page when regenerating',
+          value: 'livereload',
+          checked: true
         }
       ]
     }
@@ -89,18 +106,26 @@ DocPadGenerator.prototype.askFor = function askFor() {
 
   this.prompt(prompts, function (answers) {
     // Construct the user options.
-    function hasFeature(feat) { return answers.features.indexOf(feat) !== -1; }
+    function hasRenderer(feat) { return answers.renderers.indexOf(feat) !== -1; }
+    function hasHelper(feat) { return answers.helpers.indexOf(feat) !== -1; }
     this.options = {
       appname: answers.appname,
       docpadFile: answers.docpadFile,
       license: answers.license,
-      bower: hasFeature('bower'),
-      marked: hasFeature('marked'),
-      grunt: hasFeature('grunt')
+      bower: hasHelper('bower'),
+      marked: hasRenderer('marked'),
+      eco: hasRenderer('eco'),
+      grunt: hasHelper('grunt'),
+      livereload: hasHelper('livereload')
     };
 
     // Override any of the internal variables.
     this.appname = this.options.appname;
+
+    // Ensure the base requirements are met.
+    if (!this.options.eco) {
+      this.options.eco = true;
+    }
 
     cb();
   }.bind(this));
@@ -155,6 +180,13 @@ DocPadGenerator.prototype.marked = function marked() {
   }
 };
 
+DocPadGenerator.prototype.eco = function eco() {
+  if (this.options.eco) {
+    this.copy('docpad/layouts/default.html.eco', 'src/layouts/default.html.eco');
+    this.copy('docpad/documents/eco.html.eco', 'src/documents/eco.html.eco');
+  }
+};
+
 DocPadGenerator.prototype.docpadFiles = function docpadFiles() {
   // All the DocPad source files.
   var files = [
@@ -165,7 +197,6 @@ DocPadGenerator.prototype.docpadFiles = function docpadFiles() {
   }
 
   var files = [
-    "layouts/default.html.eco",
     "files/main.css",
     "files/main.js"
   ];
