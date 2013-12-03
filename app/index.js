@@ -101,6 +101,11 @@ DocPadGenerator.prototype.askFor = function askFor() {
           checked: false
         },
         {
+          name: 'Cachr: Cache remote URLs locally',
+          value: 'cachr',
+          checked: false
+        },
+        {
           name: 'Grunt: Task Runner',
           value: 'grunt',
           checked: false
@@ -140,6 +145,7 @@ DocPadGenerator.prototype.askFor = function askFor() {
       marked: hasRenderer('marked'),
       jade: hasRenderer('jade'),
       bower: hasHelper('bower'),
+      cachr: hasHelper('cachr'),
       grunt: hasHelper('grunt'),
       livereload: hasHelper('livereload'),
       ghpages: hasDeployer('ghpages')

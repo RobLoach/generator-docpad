@@ -47,8 +47,9 @@ describe('docpad generator', function () {
               'marked',
             ],
             helpers: [
-              'grunt',
               'bower',
+              'cachr',
+              'grunt',
               'livereload'
             ],
             deployers: [
