@@ -3,6 +3,8 @@ layout: "default"
 title: "Eco Example"
 ---
 
-<p>This example of <%= appname %> makes use of the <a href="https://github.com/docpad/docpad-plugin-eco/">Eco DocPad Plugin</a>.</p>
+<p>This example of <%= @site.title %> makes use of the <a href="https://github.com/docpad/docpad-plugin-eco/">Eco DocPad Plugin</a>.</p>
 
-<ul><li><a href="index.html">Home</a></li></ul>
+<ul>
+  <li><a href="index.html">Home</a></li>
+</ul>

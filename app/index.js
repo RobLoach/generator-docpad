@@ -114,6 +114,11 @@ DocPadGenerator.prototype.askFor = function askFor() {
           name: 'Live Reload: Automatically reloads the page when regenerating',
           value: 'livereload',
           checked: true
+        },
+        {
+          name: 'Moment: Date formatting and access to Moment.js library',
+          value: 'moment',
+          checked: false
         }
       ]
     },
@@ -123,7 +128,7 @@ DocPadGenerator.prototype.askFor = function askFor() {
       message: 'Deployers',
       choices: [
         {
-          name: 'ghpages: Deploy to GitHub Pages',
+          name: 'GitHub Pages: Deploy to GitHub Pages',
           value: 'ghpages',
           checked: false
         }
@@ -148,6 +153,7 @@ DocPadGenerator.prototype.askFor = function askFor() {
       cachr: hasHelper('cachr'),
       grunt: hasHelper('grunt'),
       livereload: hasHelper('livereload'),
+      moment: hasHelper('moment'),
       ghpages: hasDeployer('ghpages')
     };
 

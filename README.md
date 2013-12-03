@@ -20,6 +20,7 @@ Scaffold [DocPad](http://docpad.org) projects quickly using [Yeoman](http://yeom
   * [Bower](http://github.com/robloach/docpad-plugin-bower)
   * [Cachr](http://docpad.org/plugin/cachr)
   * [Grunt](http://github.com/robloach/docpad-plugin-grunt)
+  * [Moment](http://docpad.org/plugin/moment)
   * [Live Reload](http://docpad.org/plugin/livereload)
 * Choose [Deployers](http://docpad.org/docs/plugins#deployers)
   * [GitHub Pages](http://docpad.org/plugin/ghpages)

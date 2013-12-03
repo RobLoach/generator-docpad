@@ -50,6 +50,7 @@ describe('docpad generator', function () {
               'bower',
               'cachr',
               'grunt',
+              'moment',
               'livereload'
             ],
             deployers: [
