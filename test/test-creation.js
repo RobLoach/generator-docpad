@@ -41,9 +41,10 @@ describe('docpad generator', function () {
             'docpadFile': 'docpad.cson',
             'license': 'Apache-2.0',
             renderers: [
-              'marked',
+              'coffeescript',
               'eco',
-              'jade'
+              'jade',
+              'marked',
             ],
             helpers: [
               'grunt',

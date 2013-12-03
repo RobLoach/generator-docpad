@@ -8,6 +8,21 @@
 Scaffold [DocPad](http://docpad.org) projects quickly using [Yeoman](http://yeoman.io).
 
 
+## Features
+
+* Build a customized DocPad application structure
+* Choose [Renderers](http://docpad.org/docs/plugins#renderers)
+  * [Eco](http://docpad.org/plugin/eco)
+  * [Jade](http://docpad.org/plugin/jade)
+  * [Marked](http://docpad.org/plugin/marked)
+* Choose [Helpers](http://docpad.org/docs/plugins#helpers)
+  * [Bower](http://github.com/robloach/docpad-plugin-bower)
+  * [Grunt](http://github.com/robloach/docpad-plugin-grunt)
+  * [Live Reload](http://docpad.org/plugin/livereload)
+* Choose [Deployers](http://docpad.org/docs/plugins#deployers)
+  * [GitHub Pages](http://docpad.org/plugin/ghpages)
+
+
 ## Getting Started
 
 1. Install [Yeoman](http://yeoman.io) and the DocPad generator globally:
@@ -30,21 +45,6 @@ $ yo docpad
 ``` bash
 $ npm start
 ```
-
-
-## Features
-
-* Builds the DocPad application structure
-* Choose [Renderers](http://docpad.org/docs/plugins#renderers)
-  * [Eco](http://docpad.org/plugin/eco)
-  * [Jade](http://docpad.org/plugin/jade)
-  * [Marked](http://docpad.org/plugin/marked)
-* Choose [Helpers](http://docpad.org/docs/plugins#helpers)
-  * [Bower](http://github.com/robloach/docpad-plugin-bower)
-  * [Grunt](http://github.com/robloach/docpad-plugin-grunt)
-  * [Live Reload](http://docpad.org/plugin/livereload)
-* Choose [Deployers](http://docpad.org/docs/plugins#deployers)
-  * [GitHub Pages](http://docpad.org/plugin/ghpages)
 
 
 ## License

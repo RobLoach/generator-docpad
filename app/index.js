@@ -69,6 +69,11 @@ DocPadGenerator.prototype.askFor = function askFor() {
       message: 'Renderers',
       choices: [
         {
+          name: 'CoffeeScript: Supports CoffeeScript to JavaScript',
+          value: 'coffeescript',
+          checked: false
+        },
+        {
           name: 'Eco: Supports Eco to anything',
           value: 'eco',
           checked: true
@@ -130,11 +135,12 @@ DocPadGenerator.prototype.askFor = function askFor() {
       appname: answers.appname,
       docpadFile: answers.docpadFile,
       license: answers.license,
-      bower: hasHelper('bower'),
-      marked: hasRenderer('marked'),
+      coffeescript: hasRenderer('coffeescript'),
       eco: hasRenderer('eco'),
-      grunt: hasHelper('grunt'),
+      marked: hasRenderer('marked'),
       jade: hasRenderer('jade'),
+      bower: hasHelper('bower'),
+      grunt: hasHelper('grunt'),
       livereload: hasHelper('livereload'),
       ghpages: hasDeployer('ghpages')
     };
@@ -191,6 +197,12 @@ DocPadGenerator.prototype.bower = function bower() {
   if (this.options.bower) {
     this.template('_bower.json', 'bower.json');
     this.template('bowerrc', '.bowerrc');
+  }
+};
+
+DocPadGenerator.prototype.coffeescript = function coffeescript() {
+  if (this.options.coffeescript) {
+    this.copy('docpad/documents/coffeescript.js.coffee', 'src/documents/coffeescript.js.coffee');
   }
 };
 
