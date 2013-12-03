@@ -12,6 +12,7 @@ Scaffold [DocPad](http://docpad.org) projects quickly using [Yeoman](http://yeom
 
 * Build a customized DocPad application structure
 * Choose [Renderers](http://docpad.org/docs/plugins#renderers)
+  * [CoffeeScript](http://docpad.org/plugin/coffeescript)
   * [Eco](http://docpad.org/plugin/eco)
   * [Jade](http://docpad.org/plugin/jade)
   * [Marked](http://docpad.org/plugin/marked)
