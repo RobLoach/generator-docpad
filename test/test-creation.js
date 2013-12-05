@@ -54,7 +54,8 @@ describe('docpad generator', function () {
               'livereload'
             ],
             deployers: [
-              'ghpages'
+              'ghpages',
+              'sunny'
             ]
         });
         this.app.options['skip-install'] = true;

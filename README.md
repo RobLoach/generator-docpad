@@ -24,6 +24,7 @@ Scaffold [DocPad](http://docpad.org) projects quickly using [Yeoman](http://yeom
   * [Live Reload](http://docpad.org/plugin/livereload)
 * Choose [Deployers](http://docpad.org/docs/plugins#deployers)
   * [GitHub Pages](http://docpad.org/plugin/ghpages)
+  * [Sunny](https://github.com/bobobo1618/docpad-plugin-sunny)
 
 
 ## Getting Started

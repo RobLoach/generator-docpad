@@ -131,6 +131,11 @@ DocPadGenerator.prototype.askFor = function askFor() {
           name: 'GitHub Pages: Deploy to GitHub Pages',
           value: 'ghpages',
           checked: false
+        },
+        {
+          name: 'Sunny: Deploy to AWS or Google Storage',
+          value: 'ghpages',
+          checked: false
         }
       ]
     }
@@ -154,7 +159,8 @@ DocPadGenerator.prototype.askFor = function askFor() {
       grunt: hasHelper('grunt'),
       livereload: hasHelper('livereload'),
       moment: hasHelper('moment'),
-      ghpages: hasDeployer('ghpages')
+      ghpages: hasDeployer('ghpages'),
+      sunny: hasDeployer('sunny')
     };
 
     // Override any of the internal variables.
@@ -180,7 +186,7 @@ DocPadGenerator.prototype.app = function app() {
   this.template('_package.json', 'package.json');
 
   // DocPad configuration file.
-  this.copy(this.options.docpadFile, this.options.docpadFile);
+  this.template(this.options.docpadFile, this.options.docpadFile);
 };
 
 DocPadGenerator.prototype.projectfiles = function projectfiles() {
