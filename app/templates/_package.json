@@ -15,7 +15,8 @@
     "docpad-plugin-coffeescript": "~2.2.3"<% } %><% if (options.cachr) { %>,
     "docpad-plugin-cachr": "~2.2.0"<% } %><% if (options.moment) { %>,
     "docpad-plugin-moment": "~2.0.2"<% } %><% if (options.sunny) { %>,
-    "docpad-plugin-sunny": "~2.1.0"<% } %>
+    "docpad-plugin-sunny": "~2.1.0"<% } %><% if (options.webpack) { %>,
+    "docpad-plugin-webpack": "~2.0.1"<% } %>
   },
   "devDependencies": {
     "docpad": "~6.56.0"<% if (options.livereload) { %>,

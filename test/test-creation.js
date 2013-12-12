@@ -32,7 +32,8 @@ describe('docpad generator', function () {
             'LICENSE.md',
             'src/documents/marked.html.md',
             'src/documents/eco.html.eco',
-            'src/layouts/default.html.eco'
+            'src/layouts/default.html.eco',
+            'src/entry.js'
         ];
 
         // Mock the answer prompts.
@@ -51,7 +52,8 @@ describe('docpad generator', function () {
               'cachr',
               'grunt',
               'moment',
-              'livereload'
+              'livereload',
+              'webpack'
             ],
             deployers: [
               'ghpages',

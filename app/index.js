@@ -119,6 +119,11 @@ DocPadGenerator.prototype.askFor = function askFor() {
           name: 'Moment: Date formatting and access to Moment.js library',
           value: 'moment',
           checked: false
+        },
+        {
+          name: 'Webpack: Bundle CommonJs/AMD/Labeled modules with webpack',
+          value: 'webpack',
+          checked: false
         }
       ]
     },
@@ -160,7 +165,8 @@ DocPadGenerator.prototype.askFor = function askFor() {
       livereload: hasHelper('livereload'),
       moment: hasHelper('moment'),
       ghpages: hasDeployer('ghpages'),
-      sunny: hasDeployer('sunny')
+      sunny: hasDeployer('sunny'),
+      webpack: hasHelper('webpack')
     };
 
     // Override any of the internal variables.
@@ -241,6 +247,12 @@ DocPadGenerator.prototype.jade = function jade() {
   if (this.options.jade) {
     this.copy('docpad/layouts/default.html.jade', 'src/layouts/default.html.jade');
     this.copy('docpad/documents/jade.html.jade', 'src/documents/jade.html.jade');
+  }
+};
+
+DocPadGenerator.prototype.webpack = function webpack() {
+  if (this.options.webpack) {
+    this.copy('docpad/entry.js', 'src/entry.js');
   }
 };
 
