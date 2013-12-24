@@ -20,6 +20,7 @@ Scaffold [DocPad](http://docpad.org) projects quickly using [Yeoman](http://yeom
   * [CoffeeScript](http://docpad.org/plugin/coffeescript)
   * [Eco](http://docpad.org/plugin/eco)
   * [Jade](http://docpad.org/plugin/jade)
+  * [LESS](http://docpad.org/plugin/less)
   * [Marked](http://docpad.org/plugin/marked)
 * Choose [Helpers](http://docpad.org/docs/plugins#helpers)
   * [Bower](http://github.com/robloach/docpad-plugin-bower)
