@@ -93,6 +93,11 @@ DocPadGenerator.prototype.askFor = function askFor() {
           checked: false
         },
         {
+          name: 'LESS: Supports LESS to CSS',
+          value: 'less',
+          checked: false
+        },
+        {
           name: 'Marked: Supports Markdown to HTML',
           value: 'marked',
           checked: false
@@ -170,6 +175,7 @@ DocPadGenerator.prototype.askFor = function askFor() {
       coffeescript: hasRenderer('coffeescript'),
       eco: hasRenderer('eco'),
       marked: hasRenderer('marked'),
+      less: hasRenderer('less'),
       jade: hasRenderer('jade'),
       bower: hasHelper('bower'),
       cachr: hasHelper('cachr'),
@@ -276,6 +282,15 @@ DocPadGenerator.prototype.eco = function eco() {
   if (this.options.eco) {
     this.copy('docpad/layouts/default.html.eco', 'src/layouts/default.html.eco');
     this.copy('docpad/documents/eco.html.eco', 'src/documents/eco.html.eco');
+  }
+};
+
+/**
+ * LESS.
+ */
+DocPadGenerator.prototype.less = function less() {
+  if (this.options.less) {
+    this.copy('docpad/documents/less.css.less', 'src/documents/less.css.less');
   }
 };
 

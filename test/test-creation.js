@@ -33,7 +33,8 @@ describe('docpad generator', function () {
             'src/documents/marked.html.md',
             'src/documents/eco.html.eco',
             'src/layouts/default.html.eco',
-            'src/entry.js'
+            'src/entry.js',
+            'src/documents/less.css.less'
         ];
 
         // Mock the answer prompts.
@@ -46,6 +47,7 @@ describe('docpad generator', function () {
               'eco',
               'jade',
               'marked',
+              'less'
             ],
             helpers: [
               'bower',
