@@ -6,4 +6,3 @@
 
 // Example of how to load the package information with "json-loader":
 // var package = require("json!../package.json");
-
