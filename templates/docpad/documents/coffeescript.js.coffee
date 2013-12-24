@@ -1,5 +1,5 @@
 ###
-Coffee Script test
+Coffee-Script test
 ###
 
 test = "This is a test!"

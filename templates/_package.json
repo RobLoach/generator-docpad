@@ -6,7 +6,7 @@
     "node": ">=0.8.0"
   },
   "dependencies": {
-    "docpad": "~6.56.0"<% if (options.eco) { %>,
+    "docpad": "~6.59.6"<% if (options.eco) { %>,
     "docpad-plugin-eco": "~2.0.2"<% } %><% if (options.grunt) { %>,
     "docpad-plugin-grunt": "~2.0.5"<% } %><% if (options.marked) { %>,
     "docpad-plugin-marked": "~2.1.2"<% } %><% if (options.jade) { %>,

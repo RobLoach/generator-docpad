@@ -11,17 +11,26 @@ var yeoman = require('yeoman-generator');
  * DocPad Generator
  */
 var DocPadGenerator = module.exports = function DocPadGenerator(args, options, config) {
+  // Pass the constructor arguments over to the base class.
   yeoman.generators.Base.apply(this, arguments);
 
+  // When finished installing, install the dependencies with npm.
   this.on('end', function () {
     this.installDependencies({ skipInstall: options['skip-install'] });
   });
 
-  this.pkg = JSON.parse(this.readFileAsString(path.join(__dirname, '../package.json')));
+  // Load the package.json information.
+  this.pkg = JSON.parse(this.readFileAsString(path.join(__dirname, '..', 'package.json')));
+
+  // Set the source root to the template directory.
+  this.sourceRoot(path.join(__dirname, '..', 'templates'));
 };
 
 util.inherits(DocPadGenerator, yeoman.generators.Base);
 
+/**
+ * Ask the user for their scaffolding information.
+ */
 DocPadGenerator.prototype.askFor = function askFor() {
   var cb = this.async();
 
@@ -146,11 +155,14 @@ DocPadGenerator.prototype.askFor = function askFor() {
     }
   ];
 
+  // Ask the user the questions.
   this.prompt(prompts, function (answers) {
     // Construct the user options.
     function hasRenderer(feat) { return answers.renderers.indexOf(feat) !== -1; }
     function hasHelper(feat) { return answers.helpers.indexOf(feat) !== -1; }
     function hasDeployer(feat) { return answers.deployers.indexOf(feat) !== -1; }
+
+    // Put together the Generator options.
     this.options = {
       appname: answers.appname,
       docpadFile: answers.docpadFile,
@@ -169,7 +181,7 @@ DocPadGenerator.prototype.askFor = function askFor() {
       webpack: hasHelper('webpack')
     };
 
-    // Override any of the internal variables.
+    // Override any of the needed internal variables.
     this.appname = this.options.appname;
 
     // Ensure the base requirements are met.
@@ -181,6 +193,9 @@ DocPadGenerator.prototype.askFor = function askFor() {
   }.bind(this));
 };
 
+/**
+ * Initial application structure.
+ */
 DocPadGenerator.prototype.app = function app() {
   // Directory structure.
   this.mkdir('src');
@@ -195,6 +210,9 @@ DocPadGenerator.prototype.app = function app() {
   this.template(this.options.docpadFile, this.options.docpadFile);
 };
 
+/**
+ * Any project-related files.
+ */
 DocPadGenerator.prototype.projectfiles = function projectfiles() {
   // .editorconfig
   this.copy('editorconfig', '.editorconfig');
@@ -203,6 +221,9 @@ DocPadGenerator.prototype.projectfiles = function projectfiles() {
   this.copy('gitignore', '.gitignore');
 };
 
+/**
+ * Documentation files.
+ */
 DocPadGenerator.prototype.documentation = function documentation() {
   // Readme
   this.template('README.md', 'README.md');
@@ -211,12 +232,18 @@ DocPadGenerator.prototype.documentation = function documentation() {
   this.template('LICENSE-' + this.options.license + '.md', 'LICENSE.md');
 };
 
+/**
+ * Grunt.
+ */
 DocPadGenerator.prototype.grunt = function grunt() {
   if (this.options.grunt) {
     this.template('Gruntfile.coffee', 'Gruntfile.coffee');
   }
 };
 
+/**
+ * Bower.
+ */
 DocPadGenerator.prototype.bower = function bower() {
   if (this.options.bower) {
     this.template('_bower.json', 'bower.json');
@@ -224,18 +251,27 @@ DocPadGenerator.prototype.bower = function bower() {
   }
 };
 
+/**
+ * Coffee-Script.
+ */
 DocPadGenerator.prototype.coffeescript = function coffeescript() {
   if (this.options.coffeescript) {
     this.copy('docpad/documents/coffeescript.js.coffee', 'src/documents/coffeescript.js.coffee');
   }
 };
 
+/**
+ * Marked.
+ */
 DocPadGenerator.prototype.marked = function marked() {
   if (this.options.marked) {
     this.template('docpad/documents/marked.html.md', 'src/documents/marked.html.md');
   }
 };
 
+/**
+ * Eco.
+ */
 DocPadGenerator.prototype.eco = function eco() {
   if (this.options.eco) {
     this.copy('docpad/layouts/default.html.eco', 'src/layouts/default.html.eco');
@@ -243,6 +279,9 @@ DocPadGenerator.prototype.eco = function eco() {
   }
 };
 
+/**
+ * Jade.
+ */
 DocPadGenerator.prototype.jade = function jade() {
   if (this.options.jade) {
     this.copy('docpad/layouts/default.html.jade', 'src/layouts/default.html.jade');
@@ -250,12 +289,18 @@ DocPadGenerator.prototype.jade = function jade() {
   }
 };
 
+/**
+ * Webpack.
+ */
 DocPadGenerator.prototype.webpack = function webpack() {
   if (this.options.webpack) {
     this.copy('docpad/entry.js', 'src/entry.js');
   }
 };
 
+/**
+ * Any DocPad resource files.
+ */
 DocPadGenerator.prototype.docpadFiles = function docpadFiles() {
   // All the DocPad source files.
   var files = [

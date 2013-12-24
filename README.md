@@ -1,9 +1,14 @@
 # [Yeoman](http://yeoman.io) generator for [DocPad](http://docpad.org)
 
+<!-- BADGES/ -->
+
 [![Build Status](https://secure.travis-ci.org/RobLoach/generator-docpad.png?branch=master)](https://travis-ci.org/RobLoach/generator-docpad)
 [![NPM version](https://badge.fury.io/js/generator-docpad.png)](http://badge.fury.io/js/generator-docpad "View this project on NPM")
 [![Gittip donate button](http://img.shields.io/gittip/RobLoach.png)](https://www.gittip.com/RobLoach/ "Donate weekly to the maintainer of this project")
 [![Flattr donate button](http://img.shields.io/flattr/donate.png?color=yellow)](http://flattr.com/thing/2257574/RobLoach "Donate monthly to this project using Flattr")
+
+<!-- /BADGES -->
+
 
 Scaffold [DocPad](http://docpad.org) projects quickly using [Yeoman](http://yeoman.io).
 
@@ -51,7 +56,50 @@ $ npm start
 ```
 
 
+<!-- HISTORY/ -->
+
+## History
+[Discover the change history by heading on over to the `HISTORY.md` file.](https://github.com/RobLoach/generator-docpad/blob/master/HISTORY.md#files)
+
+<!-- /HISTORY -->
+
+
+<!-- CONTRIBUTE/ -->
+
+## Contribute
+
+[Discover how you can contribute by heading on over to the `CONTRIBUTING.md` file.](https://github.com/RobLoach/generator-docpad/blob/master/CONTRIBUTING.md#files)
+
+<!-- /CONTRIBUTE -->
+
+
+<!-- BACKERS/ -->
+
+## Backers
+
+### Maintainers
+
+These amazing people are maintaining this project:
+
+- Rob Loach (https://github.com/robloach)
+
+### Contributors
+
+These amazing people have contributed code to this project:
+
+- Rob Loach (https://github.com/robloach) - [view contributions](https://github.com/RobLoach/generator-docpad/commits?author=RobLoach)
+
+[Become a contributor!](https://github.com/RobLoach/generator-docpad/blob/master/CONTRIBUTING.md#files)
+
+<!-- /BACKERS -->
+
+
+<!-- LICENSE/ -->
+
 ## License
 
-Licensed under the incredibly [permissive](http://en.wikipedia.org/wiki/Permissive_free_software_licence) [MIT License](http://creativecommons.org/licenses/MIT/)
-<br/>Copyright &copy; 2013 [Rob Loach](http://robloach.net)
+Licensed under the incredibly [permissive](http://en.wikipedia.org/wiki/Permissive_free_software_licence) [MIT license](http://creativecommons.org/licenses/MIT/)
+
+Copyright &copy; Rob Loach (http://robloach.net)
+
+<!-- /LICENSE -->
