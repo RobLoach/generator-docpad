@@ -3,6 +3,7 @@
 - v0.0.x
   - Update documentation
   - Added LESS
+  - Added Stylus
 
 - v0.0.7 December 3rd, 2013
   - Added Moment
