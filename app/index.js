@@ -98,6 +98,11 @@ DocPadGenerator.prototype.askFor = function askFor() {
           checked: false
         },
         {
+          name: 'Stylus: Supports Stylus to CSS',
+          value: 'stylus',
+          checked: false
+        },
+        {
           name: 'Marked: Supports Markdown to HTML',
           value: 'marked',
           checked: false
@@ -177,6 +182,7 @@ DocPadGenerator.prototype.askFor = function askFor() {
       marked: hasRenderer('marked'),
       less: hasRenderer('less'),
       jade: hasRenderer('jade'),
+      stylus: hasRenderer('stylus'),
       bower: hasHelper('bower'),
       cachr: hasHelper('cachr'),
       grunt: hasHelper('grunt'),
@@ -291,6 +297,15 @@ DocPadGenerator.prototype.eco = function eco() {
 DocPadGenerator.prototype.less = function less() {
   if (this.options.less) {
     this.copy('docpad/documents/less.css.less', 'src/documents/less.css.less');
+  }
+};
+
+/**
+ * Stylus.
+ */
+DocPadGenerator.prototype.stylus = function stylus() {
+  if (this.options.stylus) {
+    this.copy('docpad/documents/stylus.css.stylus', 'src/documents/stylus.css.stylus');
   }
 };
 

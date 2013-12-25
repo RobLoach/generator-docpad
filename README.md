@@ -22,6 +22,7 @@ Scaffold [DocPad](http://docpad.org) projects quickly using [Yeoman](http://yeom
   * [Jade](http://docpad.org/plugin/jade)
   * [LESS](http://docpad.org/plugin/less)
   * [Marked](http://docpad.org/plugin/marked)
+  * [Stylus](http://docpad.org/plugin/stylus)
 * Choose [Helpers](http://docpad.org/docs/plugins#helpers)
   * [Bower](http://github.com/robloach/docpad-plugin-bower)
   * [Cachr](http://docpad.org/plugin/cachr)
