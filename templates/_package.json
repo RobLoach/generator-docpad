@@ -1,7 +1,8 @@
 {
-  "name": "<%= _.slugify(appname) %>",
+  "name": "<%= _.slugify(options.user) %>-<%= _.slugify(appname) %>",
   "description": "<%= appname %>",
   "version": "0.0.0",
+  "author": "<%= options.user %>",
   "engines": {
     "node": ">=0.8.0"
   },

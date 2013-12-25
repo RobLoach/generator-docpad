@@ -45,6 +45,11 @@ DocPadGenerator.prototype.askFor = function askFor() {
       default: (this.appname) ? this.appname : 'DocPad Example'
     },
     {
+      name: 'user',
+      message: 'Username',
+      default: (process.env.USER) ? process.env.USER : this.appname
+    },
+    {
       type: 'list',
       name: 'docpadFile',
       message: 'DocPad configuration file',
@@ -175,6 +180,7 @@ DocPadGenerator.prototype.askFor = function askFor() {
     // Put together the Generator options.
     this.options = {
       appname: answers.appname,
+      user: answers.user,
       docpadFile: answers.docpadFile,
       license: answers.license,
       coffeescript: hasRenderer('coffeescript'),

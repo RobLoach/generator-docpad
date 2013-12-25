@@ -41,6 +41,7 @@ describe('docpad generator', function () {
         // Mock the answer prompts.
         helpers.mockPrompt(this.app, {
             'appname': 'DocPad test',
+            'user': 'John Smith',
             'docpadFile': 'docpad.cson',
             'license': 'Apache-2.0',
             renderers: [

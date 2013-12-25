@@ -20,4 +20,4 @@ $ npm start
 
 Licensed under the [<%= options.license %> License](LICENSE.md).
 
-Copyright &copy; <%= new Date().getFullYear() %> <%= appname %>
+Copyright &copy; <%= new Date().getFullYear() %> <%= options.user %>

@@ -1,3 +1,3 @@
 /**
- * <%= _.slugify(appname) %>
+ * JavaScript for <%= appname %>
  */
