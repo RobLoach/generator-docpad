@@ -35,7 +35,9 @@ describe('docpad generator', function () {
             'src/layouts/default.html.eco',
             'src/entry.js',
             'src/documents/less.css.less',
-            'src/documents/stylus.css.stylus'
+            'src/documents/stylus.css.stylus',
+            'src/documents/sass.css.sass',
+            'src/documents/scss.css.scss'
         ];
 
         // Mock the answer prompts.
@@ -50,7 +52,8 @@ describe('docpad generator', function () {
               'jade',
               'marked',
               'less',
-              'stylus'
+              'stylus',
+              'sass'
             ],
             helpers: [
               'bower',

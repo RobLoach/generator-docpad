@@ -103,6 +103,11 @@ DocPadGenerator.prototype.askFor = function askFor() {
           checked: false
         },
         {
+          name: 'SASS: Supports SASS/SCSS to CSS',
+          value: 'sass',
+          checked: false
+        },
+        {
           name: 'Stylus: Supports Stylus to CSS',
           value: 'stylus',
           checked: false
@@ -188,6 +193,7 @@ DocPadGenerator.prototype.askFor = function askFor() {
       marked: hasRenderer('marked'),
       less: hasRenderer('less'),
       jade: hasRenderer('jade'),
+      sass: hasRenderer('sass'),
       stylus: hasRenderer('stylus'),
       bower: hasHelper('bower'),
       cachr: hasHelper('cachr'),
@@ -303,6 +309,16 @@ DocPadGenerator.prototype.eco = function eco() {
 DocPadGenerator.prototype.less = function less() {
   if (this.options.less) {
     this.copy('docpad/documents/less.css.less', 'src/documents/less.css.less');
+  }
+};
+
+/**
+ * SASS.
+ */
+DocPadGenerator.prototype.sass = function sass() {
+  if (this.options.sass) {
+    this.copy('docpad/documents/sass.css.sass', 'src/documents/sass.css.sass');
+    this.copy('docpad/documents/scss.css.scss', 'src/documents/scss.css.scss');
   }
 };
 
