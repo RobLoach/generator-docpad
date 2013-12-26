@@ -19,7 +19,8 @@
     "docpad-plugin-sunny": "~2.1.0"<% } %><% if (options.webpack) { %>,
     "docpad-plugin-webpack": "~2.0.1"<% } %><% if (options.less) { %>,
     "docpad-plugin-less": "~2.3.0"<% } %><% if (options.stylus) { %>,
-    "docpad-plugin-stylus": "~2.5.0"<% } %>
+    "docpad-plugin-stylus": "~2.5.0"<% } %><% if (options.sass) { %>,
+    "docpad-plugin-sass": "~2.7.0"<% } %>
   },
   "devDependencies": {
     "docpad": "~6.56.0"<% if (options.livereload) { %>,
