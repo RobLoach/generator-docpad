@@ -1,5 +1,8 @@
 # History
 
+- v0.0.9
+  - Update dependencies
+
 - v0.0.8 January 12th, 2014
   - Update documentation
   - Added LESS
