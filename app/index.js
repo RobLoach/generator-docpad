@@ -10,7 +10,7 @@ var yeoman = require('yeoman-generator');
 /**
  * DocPad Generator
  */
-var DocPadGenerator = module.exports = function DocPadGenerator(args, options, config) {
+var DocPadGenerator = module.exports = function DocPadGenerator(args, options) {
   // Pass the constructor arguments over to the base class.
   yeoman.generators.Base.apply(this, arguments);
 
@@ -108,6 +108,11 @@ DocPadGenerator.prototype.askFor = function askFor() {
           checked: false
         },
         {
+          name: 'Styl: Supports Styl to CSS',
+          value: 'styl',
+          checked: false
+        },
+        {
           name: 'Stylus: Supports Stylus to CSS',
           value: 'stylus',
           checked: false
@@ -194,6 +199,7 @@ DocPadGenerator.prototype.askFor = function askFor() {
       less: hasRenderer('less'),
       jade: hasRenderer('jade'),
       sass: hasRenderer('sass'),
+      styl: hasRenderer('styl'),
       stylus: hasRenderer('stylus'),
       bower: hasHelper('bower'),
       cachr: hasHelper('cachr'),
@@ -323,6 +329,15 @@ DocPadGenerator.prototype.sass = function sass() {
 };
 
 /**
+ * Styl.
+ */
+DocPadGenerator.prototype.styl = function styl() {
+  if (this.options.styl) {
+    this.copy('docpad/documents/styl.css.styl', 'src/documents/styl.css.styl');
+  }
+};
+
+/**
  * Stylus.
  */
 DocPadGenerator.prototype.stylus = function stylus() {
@@ -356,17 +371,17 @@ DocPadGenerator.prototype.webpack = function webpack() {
 DocPadGenerator.prototype.docpadFiles = function docpadFiles() {
   // All the DocPad source files.
   var files = [
-    "documents/index.html"
+    'documents/index.html'
   ];
   for (var i in files) {
     this.template('docpad/' + files[i], 'src/' + files[i]);
   }
 
-  var files = [
-    "files/main.css",
-    "files/main.js"
+  files = [
+    'files/main.css',
+    'files/main.js'
   ];
-  for (var i in files) {
+  for (i in files) {
     this.copy('docpad/' + files[i], 'src/' + files[i]);
   }
 };

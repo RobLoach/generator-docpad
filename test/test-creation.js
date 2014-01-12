@@ -37,7 +37,8 @@ describe('docpad generator', function () {
             'src/documents/less.css.less',
             'src/documents/stylus.css.stylus',
             'src/documents/sass.css.sass',
-            'src/documents/scss.css.scss'
+            'src/documents/scss.css.scss',
+            'src/documents/styl.css.styl'
         ];
 
         // Mock the answer prompts.
@@ -52,6 +53,7 @@ describe('docpad generator', function () {
               'jade',
               'marked',
               'less',
+              'styl',
               'stylus',
               'sass'
             ],
