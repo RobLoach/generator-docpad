@@ -1,10 +1,11 @@
 # History
 
-- v0.0.x
+- v0.0.8 January 12th, 2014
   - Update documentation
   - Added LESS
   - Added Stylus
   - Added Author information
+  - Added Styl
 
 - v0.0.7 December 3rd, 2013
   - Added Moment

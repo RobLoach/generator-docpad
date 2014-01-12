@@ -1,4 +1,5 @@
 {
+  "title": "Yeoman Generator for DocPad",
   "name": "generator-docpad",
   "version": "0.0.7",
   "description": "Yeoman generator for DocPad.",
@@ -10,14 +11,13 @@
   "badges": {
     "travis": true,
     "npm": true,
+    "david": true,
+    "daviddev": false,
     "gittip": "robloach",
     "flattr": "2257574/RobLoach"
   },
   "bugs": "https://github.com/RobLoach/generator-docpad/issues",
-  "author": {
-    "name": "Rob Loach",
-    "url": "http://robloach.net"
-  },
+  "author": "Rob Loach (http://github.com/robloach)",
   "main": "app/index.js",
   "repository": {
     "type": "git",
@@ -30,7 +30,8 @@
     "yeoman-generator": "~0.14.0"
   },
   "devDependencies": {
-    "mocha": "~1.14.0"
+    "mocha": "~1.14.0",
+    "projectz": "~0"
   },
   "peerDependencies": {
     "yo": ">=1.0.0"
@@ -39,9 +40,13 @@
     "node": ">=0.8.0",
     "npm": ">=1.2.10"
   },
-  "licenses": [
-    {
-      "type": "MIT"
-    }
-  ]
+  "maintainers": [
+    "RobLoach (https://github.com/RobLoach)"
+  ],
+  "contributors": [
+    "RobLoach (https://github.com/RobLoach)"
+  ],
+  "license": {
+    "type": "MIT"
+  }
 }
