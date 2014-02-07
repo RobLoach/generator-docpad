@@ -7,7 +7,7 @@
     "node": ">=0.8.0"
   },
   "dependencies": {
-    "docpad": "~6.59.6"<% if (options.eco) { %>,
+    "docpad": "~6.63.3"<% if (options.eco) { %>,
     "docpad-plugin-eco": "~2.0.2"<% } %><% if (options.grunt) { %>,
     "docpad-plugin-grunt": "~2.0.5"<% } %><% if (options.marked) { %>,
     "docpad-plugin-marked": "~2.1.2"<% } %><% if (options.jade) { %>,
@@ -24,7 +24,7 @@
     "docpad-plugin-styl": "~2.0.0"<% } %>
   },
   "devDependencies": {
-    "docpad": "~6.56.0"<% if (options.livereload) { %>,
+    "docpad": "~6.63.3"<% if (options.livereload) { %>,
     "docpad-plugin-livereload": "~2.5.3"<% } %><% if (options.bower) { %>,
     "bower": "~1.2.7"<% } %><% if (options.grunt) { %>,
     "grunt": "~0.4.2"<% } %>
