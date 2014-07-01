@@ -43,25 +43,29 @@ Scaffold [DocPad](http://docpad.org) projects quickly using [Yeoman](http://yeom
 ## Getting Started
 
 1. Install [Yeoman](http://yeoman.io) and the DocPad generator globally:
-``` bash
-$ npm install yo generator-docpad -g
-```
+
+  ``` bash
+  $ npm install yo generator-docpad -g
+  ```
 
 2. Create a new project directory and switch to it:
-``` bash
-$ mkdir myproject
-$ cd myproject
-```
+
+  ``` bash
+  $ mkdir myproject
+  $ cd myproject
+  ```
 
 3. Call upon the DocPad Yeoman generator to build your project:
-``` bash
-$ yo docpad
-```
+
+  ``` bash
+  $ yo docpad
+  ```
 
 4. Use the newly built DocPad application:
-``` bash
-$ npm start
-```
+
+  ``` bash
+  $ npm start
+  ```
 
 
 <!-- HISTORY/ -->
